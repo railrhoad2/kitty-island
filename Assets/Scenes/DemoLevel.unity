@@ -8297,22 +8297,22 @@ MonoBehaviour:
   jumpPower: 17
   ammo: 0
   coins: 0
-  health: 0
+  health: 5
   maxHealth: 5
-  maxAmmo: 5
+  maxAmmo: 100
   deathSound: {fileID: 0}
   equipSound: {fileID: 0}
   grassSound: {fileID: 0}
-  hurtSound: {fileID: 0}
+  hurtSound: {fileID: 8300000, guid: 8663627be7215464f8b2c0bc9707cb1f, type: 3}
   hurtSounds: []
   holsterSound: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: 349ec90a5f2864a74bf0c4cebd33fbc2, type: 3}
-  landSound: {fileID: 0}
+  landSound: {fileID: 8300000, guid: 801d5a8d18edb4d4a9c59d836b5bd581, type: 3}
   poundSound: {fileID: 0}
   punchSound: {fileID: 0}
   poundActivationSounds: []
   outOfAmmoSound: {fileID: 0}
-  stepSound: {fileID: 0}
+  stepSound: {fileID: 8300000, guid: 27e58179389da43abaf2aa220d014dc1, type: 3}
 --- !u!114 &886578722
 MonoBehaviour:
   m_ObjectHideFlags: 0
