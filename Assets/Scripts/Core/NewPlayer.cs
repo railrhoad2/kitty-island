@@ -179,10 +179,6 @@ public class NewPlayer : PhysicsObject
             animator.SetInteger("moveDirection", (int)Input.GetAxis("HorizontalDirection"));
             animator.SetBool("hasChair", GameManager.Instance.inventory.ContainsKey("chair"));
             targetVelocity = move * maxSpeed;
-
-
-
-
         }
         else
         {
@@ -232,6 +228,8 @@ public class NewPlayer : PhysicsObject
             launch = hurtDirection * (hurtLaunchPower.x);
             recoveryCounter.counter = 0;
 
+            animator.Play("itty-hurt", -1, 0f);
+
             if (health <= 0)
             {
                 StartCoroutine(Die());
@@ -242,6 +240,7 @@ public class NewPlayer : PhysicsObject
             }
 
             GameManager.Instance.hud.HealthBarHurt();
+            animator.SetBool("hurt", false);
         }
     }
 

@@ -8291,9 +8291,9 @@ MonoBehaviour:
   dead: 0
   frozen: 0
   fallForgiveness: 0.2
-  hurtLaunchPower: {x: 0, y: 0}
-  launchRecovery: 0
-  maxSpeed: 7
+  hurtLaunchPower: {x: 1, y: 1}
+  launchRecovery: 3
+  maxSpeed: 8
   jumpPower: 17
   ammo: 0
   coins: 0
@@ -8304,7 +8304,10 @@ MonoBehaviour:
   equipSound: {fileID: 0}
   grassSound: {fileID: 0}
   hurtSound: {fileID: 8300000, guid: 8663627be7215464f8b2c0bc9707cb1f, type: 3}
-  hurtSounds: []
+  hurtSounds:
+  - {fileID: 8300000, guid: 7784b97f137244a999da3068a3bd0e9a, type: 3}
+  - {fileID: 8300000, guid: 7784b97f137244a999da3068a3bd0e9a, type: 3}
+  - {fileID: 8300000, guid: 7784b97f137244a999da3068a3bd0e9a, type: 3}
   holsterSound: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: 349ec90a5f2864a74bf0c4cebd33fbc2, type: 3}
   landSound: {fileID: 8300000, guid: 801d5a8d18edb4d4a9c59d836b5bd581, type: 3}
