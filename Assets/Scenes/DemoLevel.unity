@@ -5117,7 +5117,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 886578724}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &84137534
 PrefabInstance:
@@ -7498,6 +7498,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0720bbf5cd8b877418f875e1a037f461, type: 3}
+--- !u!198 &670641891 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198378920401403100, guid: 9bc2cc5ac55974d43a623715964618e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 896650470}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &670641893 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 896650470}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &681819442
 GameObject:
   m_ObjectHideFlags: 0
@@ -8280,7 +8292,7 @@ MonoBehaviour:
   animator: {fileID: 886578718}
   attackHit: {fileID: 0}
   cameraEffects: {fileID: 0}
-  deathParticles: {fileID: 0}
+  deathParticles: {fileID: 670641891}
   flameParticlesAudioSource: {fileID: 0}
   graphic: {fileID: 886578717}
   graphicSprites: []
@@ -8300,7 +8312,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   maxAmmo: 100
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 5122ca88e493f4478a14110e58b512e0, type: 3}
   equipSound: {fileID: 0}
   grassSound: {fileID: 0}
   hurtSound: {fileID: 8300000, guid: 8663627be7215464f8b2c0bc9707cb1f, type: 3}
@@ -8362,6 +8374,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 670641893}
   - {fileID: 80067148}
   - {fileID: 1606516355}
   m_Father: {fileID: 0}
@@ -8532,6 +8545,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfb8c7c50f424af3b7e07b7a9eac382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &896650470
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 886578724}
+    m_Modifications:
+    - target: {fileID: 1502776856678168, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_Name
+      value: DeathParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17209
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.17208998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.17208998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1284866
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9126001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727661067630430, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199054367867821184, guid: 9bc2cc5ac55974d43a623715964618e3,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199117844348315052, guid: 9bc2cc5ac55974d43a623715964618e3,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199130227654426700, guid: 9bc2cc5ac55974d43a623715964618e3,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199620068301604544, guid: 9bc2cc5ac55974d43a623715964618e3,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9bc2cc5ac55974d43a623715964618e3, type: 3}
 --- !u!1001 &902102143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16138,7 +16240,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 886578724}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &1611100096
 PrefabInstance:

@@ -276,7 +276,10 @@ public class NewPlayer : PhysicsObject
             dead = true;
             deathParticles.Emit(10);
             GameManager.Instance.audioSource.PlayOneShot(deathSound);
-            Hide(true);
+
+            animator.Play("itty_die", -1, 0f);
+
+            //Hide(true);
             Time.timeScale = .6f;
             yield return new WaitForSeconds(5f);
             GameManager.Instance.hud.animator.SetTrigger("coverScreen");
