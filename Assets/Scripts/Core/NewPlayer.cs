@@ -328,10 +328,11 @@ public class NewPlayer : PhysicsObject
             GameManager.Instance.audioSource.PlayOneShot(deathSound);
 
             animator.Play("itty_die", -1, 0f);
-
+            Freeze(true);
             //Hide(true);
+
             Time.timeScale = .6f;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
             GameManager.Instance.hud.animator.SetTrigger("coverScreen");
             GameManager.Instance.hud.loadSceneName = SceneManager.GetActiveScene().name;
             Time.timeScale = 1f;

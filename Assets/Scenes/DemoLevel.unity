@@ -8290,7 +8290,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &886578721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8333,12 +8333,6 @@ MonoBehaviour:
   cheatItems: []
   dead: 0
   frozen: 0
-  wallSliding: 0
-  wallSlidingMaxSpeed: 3
-  wallGrabPoint: {fileID: 654469385}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
   fallForgiveness: 0.2
   hurtLaunchPower: {x: 1, y: 1}
   launchRecovery: 3
@@ -8365,6 +8359,11 @@ MonoBehaviour:
   poundActivationSounds: []
   outOfAmmoSound: {fileID: 0}
   stepSound: {fileID: 8300000, guid: 27e58179389da43abaf2aa220d014dc1, type: 3}
+  wallGrabPoint: {fileID: 654469385}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  wallSlidingMaxSpeed: 3
 --- !u!114 &886578722
 MonoBehaviour:
   m_ObjectHideFlags: 0
