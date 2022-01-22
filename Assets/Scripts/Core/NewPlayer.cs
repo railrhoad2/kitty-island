@@ -39,6 +39,7 @@ public class NewPlayer : PhysicsObject
     [SerializeField] private string[] cheatItems;
     public bool dead = false;
     public bool frozen = false;
+
     private float fallForgivenessCounter; //Counts how long the player has fallen off a ledge
     [SerializeField] private float fallForgiveness = .2f; //How long the player can fall from a ledge and still jump
     [System.NonSerialized] public string groundType = "grass";
@@ -77,6 +78,21 @@ public class NewPlayer : PhysicsObject
     public AudioClip stepSound;
     [System.NonSerialized] public int whichHurtSound;
 
+
+
+
+
+
+
+    private bool canGrab;
+    private bool isWallSliding = false;
+    public Transform wallGrabPoint;
+    public LayerMask whatIsGround;
+    private float gravityStore;
+    [SerializeField] private float wallSlidingMaxSpeed = 3f;
+
+
+
     void Start()
     {
         Cursor.visible = false;
@@ -88,6 +104,8 @@ public class NewPlayer : PhysicsObject
 
         //Find all sprites so we can hide them when the player dies.
         graphicSprites = GetComponentsInChildren<SpriteRenderer>();
+
+        gravityStore = this.rb2d.gravityScale;
 
         SetGroundType();
     }
@@ -121,6 +139,11 @@ public class NewPlayer : PhysicsObject
                 animator.SetBool("pounded", false);
                 Jump(1f);
             }
+            else if (Input.GetButtonDown("Jump") && animator.GetBool("wallSliding") == true)
+            {
+                animator.SetBool("pounded", false);
+                Jump(1f);
+            }
 
             //Flip the graphic's localScale
             if (move.x > 0.01f)
@@ -130,6 +153,31 @@ public class NewPlayer : PhysicsObject
             else if (move.x < -0.01f)
             {
                 graphic.transform.localScale = new Vector3(-origLocalScale.x, transform.localScale.y, transform.localScale.z);
+            }
+
+            //Handle wall jumping
+            canGrab = Physics2D.OverlapCircle(wallGrabPoint.position, .2f, whatIsGround);
+
+            isWallSliding = false;
+            if (canGrab && !grounded)
+            {
+                if ((transform.localScale.x == 1f && Input.GetAxisRaw("Horizontal") > 0) ||
+                    (transform.localScale.x == -1f && Input.GetAxisRaw("Horizontal") < 0))
+                {
+                    isWallSliding = true;
+                }
+            }
+
+            if (isWallSliding)
+            {
+                animator.SetBool("wallSliding", true);
+                velocity = Vector2.zero;
+                this.rb2d.gravityScale = 0f;
+            }
+            else
+            {
+                animator.SetBool("wallSliding", false);
+                this.rb2d.gravityScale = gravityStore;
             }
 
             //Punch
@@ -179,6 +227,8 @@ public class NewPlayer : PhysicsObject
             animator.SetInteger("moveDirection", (int)Input.GetAxis("HorizontalDirection"));
             animator.SetBool("hasChair", GameManager.Instance.inventory.ContainsKey("chair"));
             targetVelocity = move * maxSpeed;
+
+            Debug.Log("canGrab: " + canGrab + " isWallSliding: " + isWallSliding + " velocityX: " + velocity.x + " velocityY: " + velocity.y);
         }
         else
         {
@@ -308,6 +358,7 @@ public class NewPlayer : PhysicsObject
         if (velocity.y != jumpPower)
         {
             velocity.y = jumpPower * jumpMultiplier; //The jumpMultiplier allows us to use the Jump function to also launch the player from bounce platforms
+
             PlayJumpSound();
             PlayStepSound();
             JumpEffect();
