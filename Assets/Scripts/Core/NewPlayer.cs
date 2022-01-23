@@ -134,18 +134,26 @@ public class NewPlayer : PhysicsObject
         {
             move.x = Input.GetAxis("Horizontal") + launch;
 
+            // Time for jump checks... our normal jump
             if (Input.GetButtonDown("Jump") && animator.GetBool("grounded") == true && !jumping)
             {
                 animator.SetBool("pounded", false);
                 Jump(1f);
             }
+            // Jump while sliding, one day...
             else if (Input.GetButtonDown("Jump") && animator.GetBool("wallSliding") == true)
             {
                 animator.SetBool("pounded", false);
                 Jump(1f);
             }
 
-            //Flip the graphic's localScale
+            // Releasing jump early so as to get a baby jump
+            if (Input.GetButtonUp("Jump") && velocity.y > 0)
+            {
+                velocity = new Vector2(velocity.x, velocity.y * .65f);
+            }
+
+            // Flip the graphic's localScale
             if (move.x > 0.01f)
             {
                 graphic.transform.localScale = new Vector3(origLocalScale.x, transform.localScale.y, transform.localScale.z);
@@ -155,7 +163,7 @@ public class NewPlayer : PhysicsObject
                 graphic.transform.localScale = new Vector3(-origLocalScale.x, transform.localScale.y, transform.localScale.z);
             }
 
-            //Handle wall jumping
+            // Handle wall jumping
             canGrab = Physics2D.OverlapCircle(wallGrabPoint.position, .2f, whatIsGround);
 
             isWallSliding = false;
@@ -180,7 +188,7 @@ public class NewPlayer : PhysicsObject
                 this.rb2d.gravityScale = gravityStore;
             }
 
-            //Punch
+            // Punch
             if (Input.GetMouseButtonDown(0))
             {
                 animator.SetTrigger("attack");
@@ -228,7 +236,7 @@ public class NewPlayer : PhysicsObject
             animator.SetBool("hasChair", GameManager.Instance.inventory.ContainsKey("chair"));
             targetVelocity = move * maxSpeed;
 
-            Debug.Log("canGrab: " + canGrab + " isWallSliding: " + isWallSliding + " velocityX: " + velocity.x + " velocityY: " + velocity.y);
+            //Debug.Log("canGrab: " + canGrab + " isWallSliding: " + isWallSliding + " velocityX: " + velocity.x + " velocityY: " + velocity.y);
         }
         else
         {
