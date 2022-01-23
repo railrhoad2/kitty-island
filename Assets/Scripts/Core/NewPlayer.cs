@@ -79,11 +79,6 @@ public class NewPlayer : PhysicsObject
     [System.NonSerialized] public int whichHurtSound;
 
 
-
-
-
-
-
     private bool canGrab;
     private bool isWallSliding = false;
     public Transform wallGrabPoint;
