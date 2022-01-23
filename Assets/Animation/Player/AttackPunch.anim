@@ -2603,7 +2603,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: AttackHit
+    path: Bone_Spine1/Bone_ThighR/Bone_CalfR\/Bone_FootR
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2613,17 +2613,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: AttackHit
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: AttackHit
+    path: Bone_Spine1/Bone_ThighR/Bone_CalfR\/Bone_FootR
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2642,8 +2632,18 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: AttackHit
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Bone_Spine1/Bone_ThighR/Bone_CalfR\/Bone_FootR
+    path: AttackHit
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2653,7 +2653,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Bone_Spine1/Bone_ThighR/Bone_CalfR\/Bone_FootR
+    path: AttackHit
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

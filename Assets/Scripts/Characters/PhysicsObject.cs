@@ -13,7 +13,7 @@ public class PhysicsObject : MonoBehaviour
     [System.NonSerialized] public Vector2 targetVelocity;
     [System.NonSerialized] public bool grounded;
     [System.NonSerialized] protected Vector2 groundNormal;
-    protected Rigidbody2D rb2d;
+    public Rigidbody2D rb2d;
     [System.NonSerialized] public Vector2 velocity;
     [SerializeField] protected ContactFilter2D contactFilter;
     [SerializeField] protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];

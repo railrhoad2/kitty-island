@@ -173,13 +173,11 @@ public class NewPlayer : PhysicsObject
 
             if (isWallSliding)
             {
-                animator.SetBool("wallSliding", true);
                 velocity = Vector2.zero;
                 this.rb2d.gravityScale = 0f;
             }
             else
             {
-                animator.SetBool("wallSliding", false);
                 this.rb2d.gravityScale = gravityStore;
             }
 
@@ -229,6 +227,7 @@ public class NewPlayer : PhysicsObject
             animator.SetInteger("attackDirectionY", (int)Input.GetAxis("VerticalDirection"));
             animator.SetInteger("moveDirection", (int)Input.GetAxis("HorizontalDirection"));
             animator.SetBool("hasChair", GameManager.Instance.inventory.ContainsKey("chair"));
+            animator.SetBool("wallSliding", isWallSliding);
             targetVelocity = move * maxSpeed;
 
             //Debug.Log("canGrab: " + canGrab + " isWallSliding: " + isWallSliding + " velocityX: " + velocity.x + " velocityY: " + velocity.y);
@@ -405,7 +404,7 @@ public class NewPlayer : PhysicsObject
     public void PunchEffect()
     {
         GameManager.Instance.audioSource.PlayOneShot(punchSound);
-        cameraEffects.Shake(100, 1f);
+        //cameraEffects.Shake(100, 1f);
     }
 
     public void ActivatePound()
