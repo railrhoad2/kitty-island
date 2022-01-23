@@ -184,6 +184,7 @@ public class NewPlayer : PhysicsObject
             // Punch
             if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log("Attack!");
                 animator.SetTrigger("attack");
                 Shoot(false);
             }
